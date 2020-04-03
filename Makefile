@@ -14,5 +14,5 @@ run-example : build-image
 clean :
 	find . -name "*~" -exec rm {} \;
 
-really-clean : clean
+cleaner : clean
 	docker image rm --force $(IMAGE)
