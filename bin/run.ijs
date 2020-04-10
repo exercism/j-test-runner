@@ -2,7 +2,8 @@
 
 require'convert/json general/unittest'
 
-NB. todo: 9!:24'' NB. security level. prevent student solutions from running certain i/o ops
+NB. todo: explore using 9!:24'' NB. security level. prevent student
+NB. solutions from running certain i/o ops
 success=: (;:'status name message'),:'pass';({.,{:)@:;:@:,@:>
 failure=: (;:'status name message'),:'fail';([:>[:{.[:;:0&{::);(8}.2&{::)
 report=: failure`success@.(1=#)

@@ -1,1 +1,1 @@
-nuc_cnt=: 
+nuc_cnt=: 'syntax error
