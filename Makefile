@@ -5,7 +5,7 @@ INDIR:= /opt/test-runner/test/nc-pass/
 OUTDIR:= /opt/test-runner/
 SLUG:= nucleotide-count
 
-build-image :
+build-image : clean
 	docker build -t $(IMAGE) .
 
 run-example : build-image
@@ -14,5 +14,5 @@ run-example : build-image
 clean :
 	find . -name "*~" -exec rm {} \;
 
-really-clean : clean
+cleaner : clean
 	docker image rm --force $(IMAGE)
