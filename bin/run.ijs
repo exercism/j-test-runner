@@ -17,7 +17,7 @@ main=: monad define
 
   'order tasks'=: |: > cutopen each cutopen 1!:1 < jpath '~temp/helper.txt' NB. get ordering and tasks numbers from temporary helper file
   1!:55 < jpath '~user/temp/helper.txt' NB. deletes helper file
-  tasks=: |: ,: ,. (<'task') ,: <"0 tasks NB. tasks has shape 4 2 1 in order to simplify the merge
+  tasks=: |: ,: ,. (<'task_id') ,: <"0 tasks NB. tasks has shape 4 2 1 in order to simplify the merge
 
   if. (1<#result) do.
     if. 'Suite Error:'-:1{::result do. NB. error running test suite
