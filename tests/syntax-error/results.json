@@ -1,0 +1,5 @@
+{
+  "version": 3,
+  "status": "error",
+  "message": "|syntax error: script\n|   nuc_cnt=:    4<\n|[-0] /opt/test-runner/tests/syntax-error/nucleotide-count.ijs\n"
+}

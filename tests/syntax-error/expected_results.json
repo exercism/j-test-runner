@@ -1,0 +1,5 @@
+{
+  "version": 3,
+  "status": "error",
+  "message": "|open quote\n|   nuc_cnt=: 'syntax error\n|             ^\n|[-0] /mnt/e/OneDrive/Documentos/Cursos/Exercism/j-test-runner/tests/syntax-error/nucleotide-count.ijs\n"
+}

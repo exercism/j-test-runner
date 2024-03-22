@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "status": "pass",
+  "tests": [
+    {
+      "status": "pass",
+      "name": "empty_rna_sequence",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "rna_complement_of_cytosine_is_guanine",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "rna_complement_of_guanine_is_cytosine",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "rna_complement_of_thymine_is_adenine",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "rna_complement_of_adenine_is_uracil",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "rna_complement",
+      "message": "OK",
+      "task_id": "1"
+    }
+  ]
+}
