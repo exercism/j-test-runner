@@ -19,7 +19,11 @@ main=: monad define
 
   if. (1<#result) do.
     if. 'Suite Error:'-:1{::result do. NB. error running test suite
-      output=. enc_json |: (version, 'error';(13!:12'')) ,.~ ;:'version status message'
+      'message_part err_path'=. (({.,:jpathsep@}.)~ >:@(i:&' ')) 13!:12'' NB. Get the path of the script where the error occured
+      'i_path err_path'=. indir ,: err_path NB. fill indir to conform shapes
+      relative_path=. (-. i_path = err_path) # err_path
+      error_message=. (dltbs message_part), ' ', relative_path
+      output=. enc_json |: (version, 'error' ; error_message) ,.~ ;:'version status message'
       output 1!:2 < outdir,'/results.json'
       exit 1
     end.
