@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "status": "fail",
+  "tests": [
+    {
+      "status": "pass",
+      "name": "nuc_cnt1",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "fail",
+      "name": "nuc_cnt2",
+      "message": "|assertion failure: assert",
+      "test_code": "assert 0 0 1 0-:1,nuc_cnt 1$'G'",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "nuc_cnt3",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "nuc_cnt4",
+      "message": "OK",
+      "task_id": "1"
+    }
+  ]
+}

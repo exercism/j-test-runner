@@ -1,0 +1,5 @@
+{
+  "version": 3,
+  "status": "error",
+  "message": "|syntax error: script\n|   nuc_cnt=:    ''<\n|[-0] nucleotide-count.ijs\n"
+}
