@@ -10,12 +10,22 @@ report=:  failure`success@.(1=#)
 status=:  (;:'fail pass') {~ [: *./ ('pass'-:1 0&{::)S:1
 version=: <3
 
+NB. REGEX verbs to circunvent the ignore flags on tests
+temp_test_path     =: < jpath '~temp/test.ijs'
+repl_solution_path =: '[a-zA-Z0-9[-]*]*[.]ijs'&(jcwdpath rxapply)
+repl_ignore_flag   =: '_ignore ?=: ?[1-9]*'&( ( ('[1-9]+' ; '0')&rxrplc) rxapply)
+
+
 main=: monad define
   'slug indir outdir'=. _3{.ARGV NB. name args to vars and record cd
   indir=. jpathsep indir 
   outdir=. jpathsep outdir
   1!:44 indir NB. cd to indir
-  result=. }. }: <;._2 unittest indir,'test.ijs' NB. run tests
+
+  (repl_ignore_flag repl_solution_path 1!:1 < indir, 'test.ijs') 1!:2 temp_test_path NB. replace ignore flags and record tests in J's temp folder
+
+  result=. }. }: <;._2 unittest jpath '~temp/test.ijs' NB. run tests
+  1!:55 temp_test_path NB. deletes temporary test file
 
   if. (1<#result) do.
     if. 'Suite Error:'-:1{::result do. NB. error running test suite
