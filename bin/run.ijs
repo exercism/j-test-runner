@@ -10,7 +10,7 @@ report=:  failure`success@.(1=#)
 status=:  (;:'fail pass') {~ [: *./ ('pass'-:1 0&{::)S:1
 version=: <3
 
-NB. REGEX verbs to circunvent the ignore flags on tests
+NB. REGEX verbs to circumvent the ignore flags on tests
 temp_test_path     =: < jpath '~temp/test.ijs'
 repl_solution_path =: '[a-zA-Z0-9[-]*]*[.]ijs'&(jcwdpath rxapply)
 repl_ignore_flag   =: '_ignore ?=: ?[1-9]*'&( ( ('[1-9]+' ; '0')&rxrplc) rxapply)
