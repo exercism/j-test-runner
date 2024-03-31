@@ -1,4 +1,4 @@
-#! /opt/j901/bin/jconsole
+#! /opt/j9.5/bin/jconsole
 
 require'convert/json general/unittest'
 
@@ -40,7 +40,7 @@ main=: monad define
   end. NB. else report pass/fail
 
   'order tasks'=. |: > cutopen each cutopen 1!:1 < jpath '~temp/helper.txt' NB. get ordering and tasks numbers from temporary helper file
-  1!:55 < jpath '~user/temp/helper.txt' NB. deletes helper file
+  1!:55 < jpath '~temp/helper.txt' NB. deletes helper file
   tasks=. |: ,: ,. (<'task_id') ,: <"0 tasks NB. tasks has shape 4 2 1 in order to simplify the merge
 
 

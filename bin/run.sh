@@ -33,7 +33,7 @@ echo "${slug}: testing..."
 
 # Run the tests for the provided implementation file and redirect stdout and
 # stderr to capture it
-test_output=$(/opt/j901/bin/jconsole bin/run.ijs "$slug" "$solution_dir/" "$output_dir/")
+test_output=$(/opt/j9.5/bin/jconsole bin/run.ijs "$slug" "$solution_dir/" "$output_dir/")
 
 jq . ${results_file} | sponge ${results_file}
 
