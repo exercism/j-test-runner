@@ -11,13 +11,13 @@ RUN apt-get update \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://www.jsoftware.com/download/j901/install/j901_linux64.tar.gz \
-      && tar -xvf j901_linux64.tar.gz \
-      && mv j901 /opt/j901 \
+RUN wget https://www.jsoftware.com/download/j9.5/install/j9.5_linux64.tar.gz \
+      && tar -xvf j9.5_linux64.tar.gz \
+      && mv j9.5 /opt/j9.5 \
       && apt-get -y --purge remove wget ca-certificates \
-      && rm -rf j901_linux64.tar.gz
+      && rm -rf j9.5_linux64.tar.gz
 
-RUN /opt/j901/bin/jconsole -js \
+RUN /opt/j9.5/bin/jconsole -js \
       "load'pacman'" \
       "'update'jpkg''" \
       "'install'jpkg'convert/json'" \
