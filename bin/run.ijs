@@ -81,7 +81,7 @@ main=: monad define
   (1!:55 :: '') tasksPath
   
   descriptions=. |: ,: (<'name') ,: descriptions                                       NB. descriptions and tasks has shape (# tests) 2 1 in order to simplify the merge 
-  tasks       =. |: ,: (<'task_id') ,: tasks
+  tasks       =. |: ,: (<'task_id') ,: ":each tasks
   
 
   output=. (report;.1~ [: -. ('|'={.)@>) result                                        NB. report per test

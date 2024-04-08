@@ -6,55 +6,55 @@
       "status": "pass",
       "name": "square of sum 1",
       "message": "OK",
-      "task_id": 1
+      "task_id": "1"
     },
     {
       "status": "pass",
       "name": "square of sum 5",
       "message": "OK",
-      "task_id": 1
+      "task_id": "1"
     },
     {
       "status": "pass",
       "name": "square of sum 100",
       "message": "OK",
-      "task_id": 1
+      "task_id": "1"
     },
     {
       "status": "pass",
       "name": "sum of squares 1",
       "message": "OK",
-      "task_id": 2
+      "task_id": "2"
     },
     {
       "status": "pass",
       "name": "sum of squares 5",
       "message": "OK",
-      "task_id": 2
+      "task_id": "2"
     },
     {
       "status": "pass",
       "name": "sum of squares 100",
       "message": "OK",
-      "task_id": 2
+      "task_id": "2"
     },
     {
       "status": "pass",
       "name": "difference of squares 1",
       "message": "OK",
-      "task_id": 3
+      "task_id": "3"
     },
     {
       "status": "pass",
       "name": "difference of squares 5",
       "message": "OK",
-      "task_id": 3
+      "task_id": "3"
     },
     {
       "status": "pass",
       "name": "difference of squares 100",
       "message": "OK",
-      "task_id": 3
+      "task_id": "3"
     }
   ]
 }
