@@ -4,25 +4,31 @@
   "tests": [
     {
       "status": "pass",
-      "name": "nuc_cnt1",
+      "name": "empty strand",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "nuc_cnt2",
+      "name": "can count one nucleotide in single-character input",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "nuc_cnt3",
+      "name": "strand with repeated nucleotide",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "nuc_cnt4",
+      "name": "strand with multiple nucleotides",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "strand with invalid nucleotides",
       "message": "OK",
       "task_id": "1"
     }

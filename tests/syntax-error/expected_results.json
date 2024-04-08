@@ -1,5 +1,5 @@
 {
   "version": 3,
   "status": "error",
-  "message": "|syntax error in script, unexecutable fragment (noun verb)\n|   nuc_cnt=:    ''<\n|[-1] nucleotide-count.ijs\n"
+  "message": "|syntax error in script, unexecutable fragment (noun verb)\n|   nucleotide_counts=:    ''<\n|[-1] nucleotide-count.ijs\n"
 }

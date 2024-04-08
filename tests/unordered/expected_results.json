@@ -4,37 +4,37 @@
   "tests": [
     {
       "status": "pass",
-      "name": "empty_rna_sequence",
+      "name": "Empty RNA sequence",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "rna_complement_of_cytosine_is_guanine",
+      "name": "RNA complement of cytosine is guanine",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "rna_complement_of_guanine_is_cytosine",
+      "name": "RNA complement of guanine is cytosine",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "rna_complement_of_thymine_is_adenine",
+      "name": "RNA complement of thymine is adenine",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "rna_complement_of_adenine_is_uracil",
+      "name": "RNA complement of adenine is uracil",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "rna_complement",
+      "name": "RNA complement",
       "message": "OK",
       "task_id": "1"
     }
