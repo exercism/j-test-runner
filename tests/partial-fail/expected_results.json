@@ -3,28 +3,35 @@
   "status": "fail",
   "tests": [
     {
+      "status": "fail",
+      "name": "empty strand",
+      "message": "assertion failure: assert",
+      "test_code": "assert 0 0 0 0 0-:nucleotide_counts''",
+      "task_id": "1"
+    },
+    {
       "status": "pass",
-      "name": "nuc_cnt1",
+      "name": "can count one nucleotide in single-character input",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "strand with repeated nucleotide",
+      "message": "OK",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "strand with multiple nucleotides",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "fail",
-      "name": "nuc_cnt2",
-      "message": "|assertion failure: assert",
-      "test_code": "assert 0 0 1 0-:1,nuc_cnt 1$'G'",
-      "task_id": "1"
-    },
-    {
-      "status": "pass",
-      "name": "nuc_cnt3",
-      "message": "OK",
-      "task_id": "1"
-    },
-    {
-      "status": "pass",
-      "name": "nuc_cnt4",
-      "message": "OK",
+      "name": "strand with invalid nucleotides",
+      "message": "value error: nucleotide_counts",
+      "test_code": "13!:8(21)",
       "task_id": "1"
     }
   ]

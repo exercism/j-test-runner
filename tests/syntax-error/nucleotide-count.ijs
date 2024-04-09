@@ -1,1 +1,1 @@
-nuc_cnt=: '' < NB. 'syntax error
+nucleotide_counts=: '' < NB. 'syntax error

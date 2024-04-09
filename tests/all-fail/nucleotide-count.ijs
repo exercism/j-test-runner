@@ -1,1 +1,1 @@
-nuc_cnt=: ]
+nucleotide_counts=: ]

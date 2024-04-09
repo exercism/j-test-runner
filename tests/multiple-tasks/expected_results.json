@@ -4,49 +4,55 @@
   "tests": [
     {
       "status": "pass",
-      "name": "square_of_sum_1",
+      "name": "square of sum 1",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "square_of_sum_5",
+      "name": "square of sum 5",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "square_of_sum_100",
+      "name": "square of sum 100",
       "message": "OK",
       "task_id": "1"
     },
     {
       "status": "pass",
-      "name": "sum_of_square_5",
+      "name": "sum of squares 1",
       "message": "OK",
       "task_id": "2"
     },
     {
       "status": "pass",
-      "name": "sum_of_square_100",
+      "name": "sum of squares 5",
       "message": "OK",
       "task_id": "2"
     },
     {
       "status": "pass",
-      "name": "difference_of_squares_0",
+      "name": "sum of squares 100",
+      "message": "OK",
+      "task_id": "2"
+    },
+    {
+      "status": "pass",
+      "name": "difference of squares 1",
       "message": "OK",
       "task_id": "3"
     },
     {
       "status": "pass",
-      "name": "difference_of_squares_5",
+      "name": "difference of squares 5",
       "message": "OK",
       "task_id": "3"
     },
     {
       "status": "pass",
-      "name": "difference_of_squares_100",
+      "name": "difference of squares 100",
       "message": "OK",
       "task_id": "3"
     }
