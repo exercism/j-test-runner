@@ -75,7 +75,7 @@ main=: monad define
   NB. Get the data from temporary files
   descriptions=. dec_json 1!:1 descrPath                                               NB. the decription file will allways be created; it's absence is an error
   order       =. (<:@>@dec_json@(1!:1) :: '') orderPath                                NB. if order file does not exists the test were executed as defined
-  sort_exec   =. ({~ order&/:)^:('' -.@-: order)                                       NB. sort tests by order of execution if necessary
+  sort_exec   =. order&((] {~ /:@/:)^:('' -.@-: [))                                       NB. sort tests by order of execution if necessary
   tasks       =. (dec_json@(1!:1) :: (<"0 '1' #~ # descriptions)) tasksPath            NB. if tasks file does not exists task_id is '1' for all tests
 
   (1!:55 :: '') descrPath                                                              NB. deletes helper file
