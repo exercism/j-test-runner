@@ -12,19 +12,19 @@
     {
       "status": "pass",
       "name": "can count one nucleotide in single-character input",
-      "message": "OK",
+      "test_code": "assert 0 0 1 0 -: nucleotide_counts 1$'G'",
       "task_id": "1"
     },
     {
       "status": "pass",
       "name": "strand with repeated nucleotide",
-      "message": "OK",
+      "test_code": "assert 0 0 7 0 -: nucleotide_counts 'GGGGGGG'",
       "task_id": "1"
     },
     {
       "status": "pass",
       "name": "strand with multiple nucleotides",
-      "message": "OK",
+      "test_code": "assert 20 12 17 21 -: nucleotide_counts 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'",
       "task_id": "1"
     },
     {
