@@ -4,6 +4,7 @@ require'convert/json general/unittest'
 
 NB. todo: explore using 9!:24'' NB. security level. prevent student solutions from running certain i/o ops.
 NB. Simplify the process of substitution of test_name by description
+NB. Refactor method to include test_code at passing tests
 
 NB. ===================================================================================================================
 
@@ -75,14 +76,14 @@ main=: monad define
   NB. Get the data from temporary files
   descriptions=. dec_json 1!:1 descrPath                                               NB. the decription file will allways be created; it's absence is an error
   order       =. (<:@>@dec_json@(1!:1) :: '') orderPath                                NB. if order file does not exists the test were executed as defined
-  sort_exec   =. order&((] {~ /:@/:)^:('' -.@-: [))                                       NB. sort tests by order of execution if necessary
+  sort_exec   =. order&((] {~ /:@/:)^:('' -.@-: [))                                    NB. sort tests by order of execution if necessary
   tasks       =. (dec_json@(1!:1) :: (<"0 '1' #~ # descriptions)) tasksPath            NB. if tasks file does not exists task_id is '1' for all tests
 
   (1!:55 :: '') descrPath                                                              NB. deletes helper file
   (1!:55 :: '') orderPath
   (1!:55 :: '') tasksPath
 
-  assertions  =. |: ,: (<'message') ,: sort_exec 'assert .*' rxall test
+  assertions  =. |: ,: (<'test_code') ,: sort_exec 'assert .*' rxall test
   descriptions=. |: ,: (<'name') ,: descriptions                                       NB. descriptions and tasks has shape (# tests) 2 1 in order to simplify the merge
   tasks       =. |: ,: (<'task_id') ,: ":each tasks
 

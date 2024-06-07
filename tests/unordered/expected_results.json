@@ -5,37 +5,37 @@
     {
       "status": "pass",
       "name": "Empty RNA sequence",
-      "message": "assert '' -: to_rna ''",
+      "test_code": "assert '' -: to_rna ''",
       "task_id": "1"
     },
     {
       "status": "pass",
       "name": "RNA complement of cytosine is guanine",
-      "message": "assert 'C' -: to_rna 'G'",
+      "test_code": "assert 'C' -: to_rna 'G'",
       "task_id": "1"
     },
     {
       "status": "pass",
       "name": "RNA complement of guanine is cytosine",
-      "message": "assert 'G' -: to_rna 'C'",
+      "test_code": "assert 'G' -: to_rna 'C'",
       "task_id": "1"
     },
     {
       "status": "pass",
       "name": "RNA complement of thymine is adenine",
-      "message": "assert 'A' -: to_rna'T'",
+      "test_code": "assert 'A' -: to_rna'T'",
       "task_id": "1"
     },
     {
       "status": "pass",
       "name": "RNA complement of adenine is uracil",
-      "message": "assert 'U' -: to_rna'A'",
+      "test_code": "assert 'U' -: to_rna'A'",
       "task_id": "1"
     },
     {
       "status": "pass",
       "name": "RNA complement",
-      "message": "assert 'UGCACCAGAAUU' -: to_rna 'ACGTGGTCTTAA'",
+      "test_code": "assert 'UGCACCAGAAUU' -: to_rna 'ACGTGGTCTTAA'",
       "task_id": "1"
     }
   ]
