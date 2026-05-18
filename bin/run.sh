@@ -35,6 +35,7 @@ echo "${slug}: testing..."
 # stderr to capture it
 test_output=$(/opt/j9.5/bin/jconsole bin/run.ijs "$slug" "$solution_dir/" "$output_dir/")
 
-jq . ${results_file} | sponge ${results_file}
+result=$(jq . "${results_file}")
+printf '%s\n' "${result}" > "${results_file}"
 
 echo "${slug}: done"
