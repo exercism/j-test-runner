@@ -61,29 +61,30 @@ main=: monad define
   result=. }. }: <;._2 unittest jpath '~temp/test.ijs'                                 NB. run tests
   1!:55 temp_test_path                                                                 NB. deletes temporary test file
 
-  if. (1<#result) do.
-    if. 'Suite Error:'-:1{::result do.                                                 NB. error running test suite
-      'message_part err_path'=. (({. ,: jpathsep@}.)~ >:@(i:&' ')) 13!:12''            NB. Get the path of the script where the error occured
-      'i_path err_path'=. indir ,: err_path                                            NB. fill indir to conform shapes
-      relative_path=. (-. i_path = err_path) # err_path
-      error_message=. (dltbs message_part), ' ', relative_path
-      output=. enc_json |: (;:'version status message') ,. version, 'error' ; error_message
-      output 1!:2 < outdir,'/results.json'
-      exit 1
-    end.
+  if. (<'Suite Error:') e. result do.                                                  NB. error running test suite
+    'message_part err_path'=. (({. ,: jpathsep@}.)~ >:@(i:&' ')) 13!:12''              NB. Get the path of the script where the error occured
+    relative_path=. (#indir) }.^:(indir -: (#indir) {. ]) dtb err_path                  NB. drop the padding; make path relative to indir if it is inside indir
+    error_message=. (dltbs message_part), ' ', relative_path
+    output=. enc_json |: (;:'version status message') ,. version, 'error' ; error_message
+    output 1!:2 < outdir,'/results.json'
+    exit 1
   end.                                                                                 NB. else report pass/fail
 
   NB. Get the data from temporary files
   descriptions=. dec_json 1!:1 descrPath                                               NB. the decription file will allways be created; it's absence is an error
   order       =. (<:@>@dec_json@(1!:1) :: '') orderPath                                NB. if order file does not exists the test were executed as defined
-  sort_exec   =. order&((] {~ /:@/:)^:('' -.@-: [))                                    NB. sort tests by order of execution if necessary
+  sort_exec   =. order&((] {~ /:@[)^:('' -.@-: [))                                     NB. sort tests by their Order values if necessary
   tasks       =. (dec_json@(1!:1) :: (<"0 '1' #~ # descriptions)) tasksPath            NB. if tasks file does not exists task_id is '1' for all tests
 
   (1!:55 :: '') descrPath                                                              NB. deletes helper file
   (1!:55 :: '') orderPath
   (1!:55 :: '') tasksPath
 
-  assertions  =. |: ,: (<'test_code') ,: sort_exec 'assert .*' rxall test
+  blocks      =. (((<'test_') = 5&{.each) <;.1 ]) <;._2 test                        NB. split test file into one block of lines per test
+  block_names =. (5 }. 0 {:: ;:@(0&{::)) each blocks                                  NB. test name without the test_ prefix
+  block_code  =. (LF joinstring 'assert .*' rxall LF joinstring ]) each blocks         NB. a test may contain several assertions
+  test_names  =. (0 {:: ;:)&.> result #~ -. ('|'={.)@> result                          NB. tests in order of execution
+  assertions  =. |: ,: (<'test_code') ,: block_code {~ block_names i. test_names
   descriptions=. |: ,: (<'name') ,: descriptions                                       NB. descriptions and tasks has shape (# tests) 2 1 in order to simplify the merge
   tasks       =. |: ,: (<'task_id') ,: ":each tasks
 

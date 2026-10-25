@@ -26,14 +26,37 @@ solution_dir=$(realpath "$2")
 output_dir=$(realpath "$3")
 results_file="${output_dir}/results.json"
 
+# Cap on the output included in the message of an error results.json
+: "${MAX_MESSAGE_BYTES:=65536}"
+
 # Create the output directory if it doesn't exist
 mkdir -p "${output_dir}"
 
 echo "${slug}: testing..."
 
+# Remove any stale results so a crash can't leave old results behind
+rm -f "${results_file}"
+
 # Run the tests for the provided implementation file and redirect stdout and
-# stderr to capture it
-test_output=$(/opt/j9.5/bin/jconsole bin/run.ijs "$slug" "$solution_dir/" "$output_dir/")
+# stderr to capture it. Read stdin from /dev/null so that after an uncaught
+# error jconsole exits instead of waiting for input.
+test_output=$(/opt/j9.5/bin/jconsole bin/run.ijs "${slug}" "${solution_dir}/" "${output_dir}/" 2>&1 </dev/null)
+exit_code=$?
+
+# If J crashed or exited before writing valid results, report an error,
+# keeping the (capped) output followed by the exit code
+if ! jq -e . "${results_file}" >/dev/null 2>&1; then
+    message="jconsole exited with code ${exit_code} without producing results."
+    if [ -n "${test_output}" ]; then
+        if [ "$(printf '%s' "${test_output}" | wc -c)" -gt "${MAX_MESSAGE_BYTES}" ]; then
+            test_output="$(printf '%s' "${test_output}" | head -c "${MAX_MESSAGE_BYTES}")
+[output truncated]"
+        fi
+        message="${test_output}
+${message}"
+    fi
+    jq -n --arg message "${message}" '{version: 3, status: "error", message: $message}' > "${results_file}"
+fi
 
 result=$(jq . "${results_file}")
 printf '%s\n' "${result}" > "${results_file}"

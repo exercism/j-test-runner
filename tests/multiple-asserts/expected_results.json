@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "status": "fail",
+  "tests": [
+    {
+      "status": "pass",
+      "name": "Single nucleotides",
+      "test_code": "assert 'G' -: to_rna 'C'\nassert 'C' -: to_rna 'G'\nassert 'A' -: to_rna 'T'\nassert 'U' -: to_rna 'A'",
+      "task_id": "1"
+    },
+    {
+      "status": "pass",
+      "name": "Empty RNA sequence",
+      "test_code": "assert '' -: to_rna ''",
+      "task_id": "1"
+    },
+    {
+      "status": "fail",
+      "name": "Invalid nucleotides",
+      "message": "assertion failure: assert",
+      "test_code": "assert'XX'-:to_rna'UU'",
+      "task_id": "2"
+    },
+    {
+      "status": "pass",
+      "name": "RNA complement",
+      "test_code": "assert 'UGCACCAGAAUU' -: to_rna 'ACGTGGTCTTAA'\nassert 'UGCACCAGAAUU' -: to_rna 'ACGTGGTCTTAA'",
+      "task_id": "1"
+    }
+  ]
+}
