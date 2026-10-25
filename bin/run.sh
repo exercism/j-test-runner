@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Synopsis:
 # Run the test runner on a solution.
@@ -48,12 +48,10 @@ exit_code=$?
 if ! jq -e . "${results_file}" >/dev/null 2>&1; then
     message="jconsole exited with code ${exit_code} without producing results."
     if [ -n "${test_output}" ]; then
-        if [ "$(printf '%s' "${test_output}" | wc -c)" -gt "${MAX_MESSAGE_BYTES}" ]; then
-            test_output="$(printf '%s' "${test_output}" | head -c "${MAX_MESSAGE_BYTES}")
-[output truncated]"
+        if (( ${#test_output} > MAX_MESSAGE_BYTES )); then
+            test_output=$(printf "%s\n%s" "${test_output:0:MAX_MESSAGE_BYTES}" "[output truncated]")
         fi
-        message="${test_output}
-${message}"
+        message=$(printf "%s\n%s" "${test_output}" "${message}")
     fi
     jq -n --arg message "${message}" '{version: 3, status: "error", message: $message}' > "${results_file}"
 fi
