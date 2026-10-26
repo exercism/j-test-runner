@@ -16,7 +16,7 @@
 # ./bin/run.sh two-fer path/to/solution/folder/ path/to/output/directory/
 
 # If any required arguments is missing, print the usage and exit
-if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
+if [[ -z "$1" || -z "$2" || -z "$3" ]]; then
     echo "usage: ./bin/run.sh exercise-slug path/to/solution/folder/ path/to/output/directory/"
     exit 1
 fi
@@ -47,7 +47,7 @@ exit_code=$?
 # keeping the (capped) output followed by the exit code
 if ! jq -e . "${results_file}" >/dev/null 2>&1; then
     message="jconsole exited with code ${exit_code} without producing results."
-    if [ -n "${test_output}" ]; then
+    if [[ -n "${test_output}" ]]; then
         if (( ${#test_output} > MAX_MESSAGE_BYTES )); then
             test_output=$(printf "%s\n%s" "${test_output:0:MAX_MESSAGE_BYTES}" "[output truncated]")
         fi
