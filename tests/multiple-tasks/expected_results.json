@@ -5,56 +5,56 @@
     {
       "status": "pass",
       "name": "square of sum 1",
-      "test_code": "assert 1 = square_of_sum 1",
-      "task_id": "1"
+      "test_code": "3 : 0\n      \n  NB. number   =. 1\n  NB. expected =. 1\n  assert 1 -: square_of_sum 1\n)",
+      "task_id": 1
     },
     {
       "status": "pass",
       "name": "square of sum 5",
-      "test_code": "assert 225 = square_of_sum 5",
-      "task_id": "1"
+      "test_code": "3 : 0\n      \n  NB. number   =. 5\n  NB. expected =. 225\n  assert 225 -: square_of_sum 5\n)",
+      "task_id": 1
     },
     {
       "status": "pass",
       "name": "square of sum 100",
-      "test_code": "assert 25502500 = square_of_sum 100",
-      "task_id": "1"
+      "test_code": "3 : 0\n      \n  NB. number   =. 100\n  NB. expected =. 25502500\n  assert 25502500 -: square_of_sum 100\n)",
+      "task_id": 1
     },
     {
       "status": "pass",
       "name": "sum of squares 1",
-      "test_code": "assert 1 = sum_of_square 1",
-      "task_id": "2"
+      "test_code": "3 : 0\n      \n  NB. number   =. 1\n  NB. expected =. 1\n  assert 1 -: sum_of_square 1\n)",
+      "task_id": 2
     },
     {
       "status": "pass",
       "name": "sum of squares 5",
-      "test_code": "assert 55 = sum_of_square 5",
-      "task_id": "2"
+      "test_code": "3 : 0\n      \n  NB. number   =. 5\n  NB. expected =. 55\n  assert 55 -: sum_of_square 5\n)",
+      "task_id": 2
     },
     {
       "status": "pass",
       "name": "sum of squares 100",
-      "test_code": "assert 338350 = sum_of_square 100",
-      "task_id": "2"
+      "test_code": "3 : 0\n      \n  NB. number   =. 100\n  NB. expected =. 338350\n  assert 338350 -: sum_of_square 100\n)",
+      "task_id": 2
     },
     {
       "status": "pass",
       "name": "difference of squares 1",
-      "test_code": "assert 0 = difference_of_squares 1",
-      "task_id": "3"
+      "test_code": "3 : 0\n      \n  NB. number   =. 1\n  NB. expected =. 0\n  assert 0 -: difference_of_squares 1\n)",
+      "task_id": 3
     },
     {
       "status": "pass",
       "name": "difference of squares 5",
-      "test_code": "assert 170 = difference_of_squares 5",
-      "task_id": "3"
+      "test_code": "3 : 0\n      \n  NB. number   =. 5\n  NB. expected =. 170\n  assert 170 -: difference_of_squares 5\n)",
+      "task_id": 3
     },
     {
       "status": "pass",
       "name": "difference of squares 100",
-      "test_code": "assert 25164150 = difference_of_squares 100",
-      "task_id": "3"
+      "test_code": "3 : 0\n      \n  NB. number   =. 100\n  NB. expected =. 25164150\n  assert 25164150 -: difference_of_squares 100\n)",
+      "task_id": 3
     }
   ]
 }

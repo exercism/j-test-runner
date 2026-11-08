@@ -1,31 +1,120 @@
 {
   "version": 3,
-  "status": "fail",
+  "status": "pass",
   "tests": [
     {
       "status": "pass",
-      "name": "Single nucleotides",
-      "test_code": "assert 'G' -: to_rna 'C'\nassert 'C' -: to_rna 'G'\nassert 'A' -: to_rna 'T'\nassert 'U' -: to_rna 'A'",
-      "task_id": "1"
+      "name": "ability modifier for score 3 is -4",
+      "test_code": "3 : 0\n    \n  NB. score    =. 3\n  NB. expected =. _4\n  assert _4 -: modifier_character_ 3\n)",
+      "task_id": 1
     },
     {
       "status": "pass",
-      "name": "Empty RNA sequence",
-      "test_code": "assert '' -: to_rna ''",
-      "task_id": "1"
-    },
-    {
-      "status": "fail",
-      "name": "Invalid nucleotides",
-      "message": "assertion failure: assert",
-      "test_code": "assert'XX'-:to_rna'UU'",
-      "task_id": "2"
+      "name": "ability modifier for score 4 is -3",
+      "test_code": "3 : 0\n    \n  NB. score    =. 4\n  NB. expected =. _3\n  assert _3 -: modifier_character_ 4\n)",
+      "task_id": 1
     },
     {
       "status": "pass",
-      "name": "RNA complement",
-      "test_code": "assert 'UGCACCAGAAUU' -: to_rna 'ACGTGGTCTTAA'\nassert 'UGCACCAGAAUU' -: to_rna 'ACGTGGTCTTAA'",
-      "task_id": "1"
+      "name": "ability modifier for score 5 is -3",
+      "test_code": "3 : 0\n    \n  NB. score    =. 5\n  NB. expected =. _3\n  assert _3 -: modifier_character_ 5\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 6 is -2",
+      "test_code": "3 : 0\n    \n  NB. score    =. 6\n  NB. expected =. _2\n  assert _2 -: modifier_character_ 6\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 7 is -2",
+      "test_code": "3 : 0\n    \n  NB. score    =. 7\n  NB. expected =. _2\n  assert _2 -: modifier_character_ 7\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 8 is -1",
+      "test_code": "3 : 0\n    \n  NB. score    =. 8\n  NB. expected =. _1\n  assert _1 -: modifier_character_ 8\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 9 is -1",
+      "test_code": "3 : 0\n    \n  NB. score    =. 9\n  NB. expected =. _1\n  assert _1 -: modifier_character_ 9\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 10 is 0",
+      "test_code": "3 : 0\n    \n  NB. score    =. 10\n  NB. expected =. 0\n  assert 0 -: modifier_character_ 10\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 11 is 0",
+      "test_code": "3 : 0\n    \n  NB. score    =. 11\n  NB. expected =. 0\n  assert 0 -: modifier_character_ 11\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 12 is +1",
+      "test_code": "3 : 0\n    \n  NB. score    =. 12\n  NB. expected =. 1\n  assert 1 -: modifier_character_ 12\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 13 is +1",
+      "test_code": "3 : 0\n    \n  NB. score    =. 13\n  NB. expected =. 1\n  assert 1 -: modifier_character_ 13\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 14 is +2",
+      "test_code": "3 : 0\n    \n  NB. score    =. 14\n  NB. expected =. 2\n  assert 2 -: modifier_character_ 14\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 15 is +2",
+      "test_code": "3 : 0\n    \n  NB. score    =. 15\n  NB. expected =. 2\n  assert 2 -: modifier_character_ 15\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 16 is +3",
+      "test_code": "3 : 0\n    \n  NB. score    =. 16\n  NB. expected =. 3\n  assert 3 -: modifier_character_ 16\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 17 is +3",
+      "test_code": "3 : 0\n    \n  NB. score    =. 17\n  NB. expected =. 3\n  assert 3 -: modifier_character_ 17\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "ability modifier for score 18 is +4",
+      "test_code": "3 : 0\n    \n  NB. score    =. 18\n  NB. expected =. 4\n  assert 4 -: modifier_character_ 18\n)",
+      "task_id": 1
+    },
+    {
+      "status": "pass",
+      "name": "random ability is within range",
+      "test_code": "3 : 0\n    \n  assert ability_within_range ability_character_ ''\n)",
+      "task_id": 2
+    },
+    {
+      "status": "pass",
+      "name": "random character is valid",
+      "test_code": "3 : 0\n      \n  c=. '' conew 'character'\n\n  assert ability_within_range STRENGTH__c\n  assert ability_within_range DEXTERITY__c\n  assert ability_within_range CONSTITUTION__c\n  assert ability_within_range INTELLIGENCE__c\n  assert ability_within_range WISDOM__c\n  assert ability_within_range CHARISMA__c\n)",
+      "task_id": 3
+    },
+    {
+      "status": "pass",
+      "name": "each ability is only calculated once",
+      "test_code": "3 : 0\n    \n  c=. '' conew 'character'\n\n  assert STRENGTH__c = STRENGTH__c\n  assert DEXTERITY__c = DEXTERITY__c\n  assert CONSTITUTION__c = CONSTITUTION__c\n  assert INTELLIGENCE__c = INTELLIGENCE__c\n  assert WISDOM__c = WISDOM__c\n  assert CHARISMA__c = CHARISMA__c\n  assert HITPOINTS__c = 10 + modifier_character_ CONSTITUTION__c\n)",
+      "task_id": 4
     }
   ]
 }
