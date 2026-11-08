@@ -40,7 +40,7 @@ rm -f "${results_file}"
 # Run the tests for the provided implementation file and redirect stdout and
 # stderr to capture it. Read stdin from /dev/null so that after an uncaught
 # error jconsole exits instead of waiting for input.
-test_output=$(/opt/j9.5/bin/jconsole bin/run.ijs "${slug}" "${solution_dir}/" "${output_dir}/" 2>&1 </dev/null)
+test_output=$(/opt/j9.7/bin/jconsole bin/run.ijs "${slug}" "${solution_dir}/" "${output_dir}/" 2>&1 </dev/null)
 exit_code=$?
 
 # If J crashed or exited before writing valid results, report an error,
