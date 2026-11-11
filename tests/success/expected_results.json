@@ -5,32 +5,27 @@
     {
       "status": "pass",
       "name": "empty strand",
-      "test_code": "3 : 0\n    \n  NB. Expected=: 0 0 0 0\n  assert 0 0 0 0 -: nucleotide_counts ''\n)",
-      "task_id": 1
+      "test_code": "3 : 0\n    \n  NB. Expected=: 0 0 0 0\n  assert 0 0 0 0 -: nucleotide_counts ''\n)"
     },
     {
       "status": "pass",
       "name": "can count one nucleotide in single-character input",
-      "test_code": "3 : 0\n    \n  NB. Expected=: 0 0 1 0\n  assert 0 0 1 0 -: nucleotide_counts 1$'G'\n)",
-      "task_id": 1
+      "test_code": "3 : 0\n    \n  NB. Expected=: 0 0 1 0\n  assert 0 0 1 0 -: nucleotide_counts 1$'G'\n)"
     },
     {
       "status": "pass",
       "name": "strand with repeated nucleotide",
-      "test_code": "3 : 0\n    \n  NB. Expected=: 0 0 7 0\n  assert 0 0 7 0 -: nucleotide_counts 'GGGGGGG'\n)",
-      "task_id": 1
+      "test_code": "3 : 0\n    \n  NB. Expected=: 0 0 7 0\n  assert 0 0 7 0 -: nucleotide_counts 'GGGGGGG'\n)"
     },
     {
       "status": "pass",
       "name": "strand with multiple nucleotides",
-      "test_code": "3 : 0\n    \n  NB. Expected=: 20 12 17 21\n  assert 20 12 17 21 -: nucleotide_counts 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'\n)",
-      "task_id": 1
+      "test_code": "3 : 0\n    \n  NB. Expected=: 20 12 17 21\n  assert 20 12 17 21 -: nucleotide_counts 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'\n)"
     },
     {
       "status": "pass",
       "name": "strand with invalid nucleotides",
-      "test_code": "3 : 0\n    \n  NB. Expected=: 'domain error'\n  assert (>@{: 9!:8 '') -: nucleotide_counts 'AGXXACT'\n)",
-      "task_id": 1
+      "test_code": "3 : 0\n    \n  NB. Expected=: 'domain error'\n  assert (>@{: 9!:8 '') -: nucleotide_counts 'AGXXACT'\n)"
     }
   ]
 }

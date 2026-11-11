@@ -1,5 +1,6 @@
 require'convert/json general/unittest'
 
+NB. TODO task_ID handling for concept exercises
 
 NB. `file_config`:
 NB. make the solution path absolute
@@ -15,8 +16,8 @@ before_each=: monad define
 after_each=: monad define
   (y,'_Description__')=: Description
   (y,'_Code__')=: ('(Description=:.+\n|Task=:.+\n)';'') rxrplc 5!:5 <'test_', y
-  (y,'_Task__')=: (Task"_ :: 1) y
-  erase 'Description Task'
+  NB. (y,'_Task__')=: (Task"_ :: 1) y
+  NB. erase 'Description Task'
 )
 }}
 
@@ -26,7 +27,7 @@ after_each=: monad define
 NB. each line starting with `|` is aditional information for test result above
 NB. The result is a list of boxes where # y equals the number of tests
 format_results=:{{
-   (#fo){.(<;.1~ '|' ~: {.@>) -.&a: }. <;._2 y
+  -.&a: (#fo) {. (<;.1~ '|' ~: {.@>) -.&a: }. <;._2 y
 }}
 
 NB. TODO: find a simplified way obtain the test order
@@ -39,11 +40,11 @@ report=: {{
   td=. 0 {:: ;:@:>@:{. y
   tn=. (td,'_Description')~ "_
   tc=. (td,'_Code')~ "_
-  tt=. (td,'_Task')~ "_
+  NB. tt=. (td,'_Task')~ "_
   tfm=.  dtb@:(LF&joinstring@:}:@}.)
   tem=.  dtb@:(LF&joinstring@:}:)
-  success=. (;:'status name test_code task_id') ,: 'pass' ; tn ; tc ; tt
-  failure=. (;:'status name message test_code task_id') ,: 'fail' ; tn ; tfm ; tc ; tt
+  success=. (;:'status name test_code') ,: 'pass' ; tn ; tc
+  failure=. (;:'status name message test_code') ,: 'fail' ; tn ; tfm ; tc
   error  =. (;:'status message') ,: 'error' ; tem
   
   (failure`error@.(('Suite Error:';'Test Error:')e.~{.))`success@.(1=#) y
