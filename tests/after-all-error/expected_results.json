@@ -1,5 +1,27 @@
 {
   "version": 3,
-  "status": "error",
-  "message": "|noun result was required in after_all__c\n|the sentence did not produce a noun result, usually because of a misspelled word or missing argument\n|       (tasksPath 1!:2~enc_json)^:((-.@-:)&'')tasks\n|[-101] /opt/test-runner/bin/run.ijs\n"
+  "status": "fail",
+  "tests": [
+    {
+      "status": "pass",
+      "name": "Empty RNA sequence",
+      "test_code": "3 : 0\n  \n  assert '' -: to_rna ''\n)"
+    },
+    {
+      "status": "pass",
+      "name": "RNA complement of thymine is adenine",
+      "test_code": "3 : 0\n  \n  assert 'A' -: to_rna 'T'\n)"
+    },
+    {
+      "status": "fail",
+      "name": "RNA complement of cytosine is guanine",
+      "message": "|assertion failure: assert\n|       assert'U'-:to_rna'C'",
+      "test_code": "3 : 0\n  \n  assert 'U' -: to_rna 'C' NB. This test will fail\n)"
+    },
+    {
+      "status": "pass",
+      "name": "RNA complement",
+      "test_code": "3 : 0\n  \n  assert 'UGCACCAGAAUU' -: to_rna 'ACGTGGTCTTAA'\n)"
+    }
+  ]
 }

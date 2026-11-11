@@ -1,5 +1,5 @@
 {
   "version": 3,
   "status": "error",
-  "message": "|spelling error: script (invalid inflection)\n|   nucleotide_counts=: (+:):: 5\n|                          ^\n|[-1] nucleotide-count.ijs\n"
+  "message": "Suite Error:\n|spelling error: script (invalid inflection)\n|   nucleotide_counts=: (+:):: 5\n|                          ^"
 }
